@@ -1,5 +1,5 @@
 
-import 'whatwg-fetch';
+import './whatwg-fetch/fetch.js';
 import Promise from 'promise-polyfill';
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
