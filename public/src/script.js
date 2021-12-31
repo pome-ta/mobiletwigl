@@ -1,14 +1,14 @@
-
-import {fetch} from './whatwg-fetch/fetch.js';
-import Promise from 'promise-polyfill';
+console.log('hoge');
+//import {fetch} from './whatwg-fetch/fetch.js';
+//import Promise from 'promise-polyfill';
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
 import {Musician} from './music.js';
 import {FireDB} from './firedb.js';
 
-import * as firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/analytics';
+//import * as firebase from 'firebase/app';
+//import 'firebase/database';
+//import 'firebase/analytics';
 
 (() => {
 
