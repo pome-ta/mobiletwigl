@@ -1,4 +1,4 @@
-//import {Fragmen} from './fragmen.js';
+import {Fragmen} from './fragmen.js';
 
 console.log('out: hoge01');
 
@@ -76,7 +76,8 @@ let starData = null;              // スターに関するデータを保持
 let viewerData = null;            // 視聴者数に関するデータを保持
 let editorFontSize = 17;          // エディタのフォントサイズ
 console.log('in: hoge');
-
+console.log(currentMode);
+console.log(Fragmen.GEEKEST_CHUNK);
 })();
 
 console.log('out: hoge02');
