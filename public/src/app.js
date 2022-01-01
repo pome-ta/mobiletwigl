@@ -1,6 +1,5 @@
+console.log('start: main');
 import {Fragmen} from './fragmen.js';
-
-console.log('out: hoge01');
 
 (() => {
 let canvas     = null; // スクリーン
@@ -75,9 +74,72 @@ let channelData = null;           // チャンネルのデータを保持
 let starData = null;              // スターに関するデータを保持
 let viewerData = null;            // 視聴者数に関するデータを保持
 let editorFontSize = 17;          // エディタのフォントサイズ
-console.log('in: hoge');
-console.log(currentMode);
-console.log(Fragmen.GEEKEST_CHUNK);
+
+// fragmen.js 用のオプションの雛形
+const FRAGMEN_OPTION = {
+    target: null,
+    eventTarget: null,
+    mouse: true,
+    resize: true,
+    escape: false
+}
+// 外部サービスへリクエストする際のベース URL
+const BASE_URL = location.origin;
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  // DOM への参照
+  canvas     = document.querySelector('#webgl');
+  lineout    = document.querySelector('#lineout');
+  counter    = document.querySelector('#counter');
+  message    = document.querySelector('#message');
+  mode       = document.querySelector('#modeselect');
+  animate    = document.querySelector('#pausetoggle');
+  frames     = document.querySelector('#frameselect');
+  size       = document.querySelector('#sizeselect');
+  download   = document.querySelector('#downloadgif');
+  link       = document.querySelector('#permanentlink');
+  layer      = document.querySelector('#layer');
+  dialog     = document.querySelector('#dialogmessage');
+  canvasWrap = document.querySelector('#canvaswrap');
+  editorWrap = document.querySelector('#editorwrap');
+  iconColumn = document.querySelector('#globaliconcolumn');
+  infoIcon   = document.querySelector('#informationicon');
+  fullIcon   = document.querySelector('#fullscreenicon');
+  broadIcon  = document.querySelector('#broadcasticon');
+  starIcon   = document.querySelector('#stariconwrap');
+  menuIcon   = document.querySelector('#togglemenuicon');
+  noteIcon   = document.querySelector('#noteicon');
+  hideIcon   = document.querySelector('#hidemenuicon');
+  syncToggle = document.querySelector('#syncscrolltoggle');
+
+  audioWrap     = document.querySelector('#audio');
+  audioLineout  = document.querySelector('#lineoutaudio');
+  audioCounter  = document.querySelector('#counteraudio');
+  audioMessage  = document.querySelector('#messageaudio');
+  audioToggle   = document.querySelector('#audiotoggle');
+  audioPlayIcon = document.querySelector('#playicon');
+  audioStopIcon = document.querySelector('#stopicon');
+
+  // fragmen からデフォルトのソース一覧を取得
+  const fragmenDefaultSource = Fragmen.DEFAULT_SOURCE;
+
+  // メニュー及びエディタを非表示にするかどうかのフラグ
+  let isLayerHidden = false;
+  // メニュー及びエディタを非表示にするかどうかのフラグ
+  let isLayerHidden = false;
+
+  // URL の GET パラメータの解析
+  urlParameter = getParameter();
+  console.log(urlParameter);
+  
+  //console.log(fragmenDefaultSource);
+  console.log('addEventListener');
+}, false);
+
+console.log('in: main');
+
+
 })();
 
-console.log('out: hoge02');
+console.log('out: main');
