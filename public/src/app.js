@@ -1,4 +1,3 @@
-
 import {Fragmen} from './fragmen.js';
 
 (() => {
@@ -87,15 +86,13 @@ const FRAGMEN_OPTION = {
 }
 
 // 外部サービスへリクエストする際のベース URL
-//const BASE_URL = location.origin;
+const BASE_URL = location.origin;
 
 
 window.addEventListener('DOMContentLoaded', () => {
   // DOM への参照
-  
   canvas     = document.querySelector('#webgl');
   lineout    = document.querySelector('#lineout');
-  
   counter    = document.querySelector('#counter');
   message    = document.querySelector('#message');
   mode       = document.querySelector('#modeselect');
@@ -130,6 +127,73 @@ window.addEventListener('DOMContentLoaded', () => {
   const fragmenDefaultSource = Fragmen.DEFAULT_SOURCE;
   // メニュー及びエディタを非表示にするかどうかのフラグ
   let isLayerHidden = false;
+  
+  let myURL = new URL(window.location.href);
+  urlParameter = myURL.searchParams;
+  console.log(myURL);
+  console.log(urlParameter);
+  urlParameter.forEach((value, key) => {
+    console.log(key + " => " + value);
+    switch(key){
+      case 'mode':
+        currentMode = parseInt(value);
+        break;
+      case 'sound':
+        audioToggle.checked = value === 'true';
+        break;
+      case 'source':
+        currentSource = value;
+        break;
+      case 'soundsource':
+        currentAudioSource = value;
+        break;
+      case 'gd': // graphics director
+        currentDirectorId = value;
+        break;
+      case 'sd': // sound director
+        currentDirectorId = value;
+        break;
+      case 'fd': // friend director
+        friendDirectorId = value;
+        break;
+      case 'dm': // direction mode
+        directionMode = value;
+        let directionFlag = Object.entries(BROADCAST_DIRECTION).some(([key, val]) => {
+          return val === value;
+        });
+        if(directionFlag !== true){
+          directionMode = null;
+        }
+        break;
+      case 'ch': // channel
+        currentChannelId = value;
+        break;
+      case 'ow': // is owner
+        isOwner = value === 'true';
+        break;
+      case 'ol': // overlay (hide menu view)
+        document.querySelector('#wrap').classList.add('overlay');
+        isLayerHidden = true;
+        break;
+    }
+  });
+  
+  // URL パラメータより得たカレントモードが存在するか
+  if(fragmenDefaultSource[currentMode] != null){
+    mode.selectedIndex = currentMode;
+    console.log('t');
+  }else{
+    currentMode = Fragmen.MODE_CLASSIC;
+    console.log('f');
+  }
+  
+  // この時点でカレントソースが空である場合既定のソースを利用する
+  if(currentSource === ''){
+    currentSource = fragmenDefaultSource[currentMode];
+  }
+  
+  console.log(currentSource);
+  
 
   console.log('addEventListener');
 }, false);
