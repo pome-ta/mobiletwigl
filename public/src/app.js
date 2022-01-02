@@ -1,4 +1,4 @@
-console.log('start: main');
+
 import {Fragmen} from './fragmen.js';
 
 (() => {
@@ -75,22 +75,27 @@ let starData = null;              // スターに関するデータを保持
 let viewerData = null;            // 視聴者数に関するデータを保持
 let editorFontSize = 17;          // エディタのフォントサイズ
 
+
+
 // fragmen.js 用のオプションの雛形
 const FRAGMEN_OPTION = {
-    target: null,
-    eventTarget: null,
-    mouse: true,
-    resize: true,
-    escape: false
+  target: null,
+  eventTarget: null,
+  mouse: true,
+  resize: true,
+  escape: false
 }
+
 // 外部サービスへリクエストする際のベース URL
-const BASE_URL = location.origin;
+//const BASE_URL = location.origin;
 
 
 window.addEventListener('DOMContentLoaded', () => {
   // DOM への参照
+  
   canvas     = document.querySelector('#webgl');
   lineout    = document.querySelector('#lineout');
+  
   counter    = document.querySelector('#counter');
   message    = document.querySelector('#message');
   mode       = document.querySelector('#modeselect');
@@ -123,17 +128,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // fragmen からデフォルトのソース一覧を取得
   const fragmenDefaultSource = Fragmen.DEFAULT_SOURCE;
-
-  // メニュー及びエディタを非表示にするかどうかのフラグ
-  let isLayerHidden = false;
   // メニュー及びエディタを非表示にするかどうかのフラグ
   let isLayerHidden = false;
 
-  // URL の GET パラメータの解析
-  urlParameter = getParameter();
-  console.log(urlParameter);
-  
-  //console.log(fragmenDefaultSource);
   console.log('addEventListener');
 }, false);
 
