@@ -1,4 +1,5 @@
 import {Fragmen} from './fragmen.js';
+import {Onomat} from './onomat.js';
 
 (() => {
 let canvas     = null; // スクリーン

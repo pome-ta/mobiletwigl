@@ -1,5 +1,7 @@
 
-import EventEmitter3 from 'eventemitter3';
+import * as EventEmitter3 from './eventemitter3/index.js';
+
+console.log(EventEmitter3.EventEmitter);
 
 /**
  * @class
