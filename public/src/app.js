@@ -1,6 +1,8 @@
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
 
+console.log(Onomat);
+
 (() => {
 let canvas     = null; // スクリーン
 let editor     = null; // Ace editor のインスタンス
@@ -131,8 +133,6 @@ window.addEventListener('DOMContentLoaded', () => {
   
   let myURL = new URL(window.location.href);
   urlParameter = myURL.searchParams;
-  console.log(myURL);
-  console.log(urlParameter);
   urlParameter.forEach((value, key) => {
     console.log(key + " => " + value);
     switch(key){
@@ -182,10 +182,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // URL パラメータより得たカレントモードが存在するか
   if(fragmenDefaultSource[currentMode] != null){
     mode.selectedIndex = currentMode;
-    console.log('t');
   }else{
     currentMode = Fragmen.MODE_CLASSIC;
-    console.log('f');
   }
   
   // この時点でカレントソースが空である場合既定のソースを利用する

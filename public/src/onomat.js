@@ -1,13 +1,15 @@
-
+/*
 import * as EventEmitter3 from './eventemitter3/index.js';
 
 console.log(EventEmitter3.EventEmitter);
+*/
 
 /**
  * @class
  * @extends EventEmitter3
  */
-export class Onomat extends EventEmitter3 {
+//export class Onomat extends EventEmitter3 {
+export class Onomat {
     /**
      * 発火するイベント
      * @type {Array.<string>}
@@ -72,7 +74,7 @@ uniform float sampleRate;
      * @constructor
      */
     constructor(){
-        super();
+        //super();
 
         /**
          * WebGL 2.0 で初期化できたかどうか
