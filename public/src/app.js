@@ -1,7 +1,6 @@
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
 
-console.log(Onomat);
 
 (() => {
 let canvas     = null; // スクリーン
@@ -191,7 +190,13 @@ window.addEventListener('DOMContentLoaded', () => {
     currentSource = fragmenDefaultSource[currentMode];
   }
   
-  console.log(currentSource);
+  // audioToggle が checked ではないかサウンドシェーダのソースが空の場合既定のソースを利用する
+  if (audioToggle.checked !== true || currentAudioSource === '') {
+    currentAudioSource = Onomat.FRAGMENT_SHADER_SOURCE_DEFAULT;
+  }
+  console.log(currentAudioSource);
+  
+  //console.log(currentSource);
   
 
   console.log('addEventListener');
