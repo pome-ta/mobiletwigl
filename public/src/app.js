@@ -2331,6 +2331,8 @@ function requestFullscreenMode(){
 */
 function copyToClipboard(str){
   // textarea を生成して値を設定し文字列選択でコマンド発行
+  console.log('copyToClipboard');
+  console.log(str);
   const t = document.createElement('textarea');
   t.value = str;
   document.body.appendChild(t);
