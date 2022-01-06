@@ -649,7 +649,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 100);
       });
   }, false);
-/*
+
   // リンク生成ボタン
   link.addEventListener('click', () => {
     if(link.classList.contains('disabled') === true){return;}
@@ -680,6 +680,8 @@ window.addEventListener('DOMContentLoaded', () => {
     target: canvas,
     eventTarget: window,
   });
+  
+  
   fragmen = new Fragmen(option);
   // シェーダが更新された段階で同時にメッセージを更新
   fragmen.onBuild((status, msg) => {
@@ -713,6 +715,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  
+  
   fragmen.onDraw(() => {
     let freq = 0.0;
     if(musician != null && musician.isPlay === true){
@@ -725,6 +729,8 @@ window.addEventListener('DOMContentLoaded', () => {
       fragmen.setFrequency(freq);
     }
   });
+  
+  
   // デフォルトのメッセージを出力
   counter.textContent = `${currentSource.length}`;
   message.textContent = ' ● ready';
@@ -738,7 +744,8 @@ window.addEventListener('DOMContentLoaded', () => {
       mode.children[i].disabled = Fragmen.MODE_WITH_ES_300.includes(i);
     }
   }
-
+  console.log('hoge');
+/*
   // サウンドシェーダ関連
   audioToggle.addEventListener('change', () => {
     onomatSetting();
