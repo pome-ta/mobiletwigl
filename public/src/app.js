@@ -2,7 +2,7 @@
 //import Promise from 'promise-polyfill';
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
-//import {Musician} from './music.js';
+import {Musician} from './music.js';
 //import {FireDB} from './firedb.js';
 
 //import * as firebase from 'firebase/app';
@@ -431,7 +431,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }, false);
-/*
 
   // ダウンロードボタン
   download.addEventListener('click', () => {
@@ -650,7 +649,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 100);
       });
   }, false);
-
+/*
   // リンク生成ボタン
   link.addEventListener('click', () => {
     if(link.classList.contains('disabled') === true){return;}
@@ -855,6 +854,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   };
+  
+  
   // アイコンが押されたとき
   const onFullscreenRequest = () => {
     if(

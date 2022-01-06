@@ -1,11 +1,11 @@
-
-import EventEmitter3 from 'eventemitter3';
+// https://www.skypack.dev/view/eventemitter3
+import eventemitter3 from './Eventemitter3.js';
 
 /**
  * @class
  * @extends EventEmitter3
  */
-export class Musician extends EventEmitter3 {
+export class Musician extends eventemitter3 {
     /**
      * analyser に指定する FFT サイズ
      * @type {number}
