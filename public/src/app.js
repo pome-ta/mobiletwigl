@@ -744,8 +744,8 @@ window.addEventListener('DOMContentLoaded', () => {
       mode.children[i].disabled = Fragmen.MODE_WITH_ES_300.includes(i);
     }
   }
-  console.log('hoge');
-/*
+  
+
   // サウンドシェーダ関連
   audioToggle.addEventListener('change', () => {
     onomatSetting();
@@ -765,11 +765,15 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }, false);
+  console.log('hoge');
+  
   audioStopIcon.addEventListener('click', () => {
     if(musician != null){musician.stop();}
     if(audioToggle.checked !== true){return;}
     onomat.stop();
   }, false);
+  
+  /*
   window.addEventListener('keydown', (evt) => {
     // vim mode
     if(
