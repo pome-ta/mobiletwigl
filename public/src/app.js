@@ -33,7 +33,7 @@ let fullIcon   = null; // fullscreen icon
 let broadIcon  = null; // broadcast mode icon
 let starIcon   = null; // star icon
 let menuIcon   = null; // menu icon
-//let noteIcon   = null; // note icon
+let noteIcon   = null; // note icon
 let hideIcon   = null; // hide menu icon
 let syncToggle = null; // スクロール同期用のチェックボックス
 
@@ -145,10 +145,10 @@ window.addEventListener('DOMContentLoaded', () => {
   iconColumn = document.querySelector('#globaliconcolumn');
   infoIcon   = document.querySelector('#informationicon');
   fullIcon   = document.querySelector('#fullscreenicon');
-  //broadIcon  = document.querySelector('#broadcasticon');
+  broadIcon  = document.querySelector('#broadcasticon');
   starIcon   = document.querySelector('#stariconwrap');
   menuIcon   = document.querySelector('#togglemenuicon');
-  //noteIcon   = document.querySelector('#noteicon');
+  noteIcon   = document.querySelector('#noteicon');
   hideIcon   = document.querySelector('#hidemenuicon');
   syncToggle = document.querySelector('#syncscrolltoggle');
 
