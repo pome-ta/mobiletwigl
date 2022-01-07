@@ -267,7 +267,7 @@ body {
 .editor {
     font-family: 'Overpass Mono', monospace;
     /*font-size: 17px;*/
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0px;
     line-height: 130%;
     width: 100%;
@@ -338,7 +338,7 @@ body {
     display: flex;
     flex-direction: row;
     overflow: auto;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0px;
     z-index: 9;
 }
@@ -800,3 +800,24 @@ div#main.editorblock {
   display:none;
 }*/
 
+
+#broadcastblock {
+  display:none;
+}
+
+#modeselectblock {
+  display:none;
+}
+
+#exportblock {
+  display:none;
+}
+
+
+div.counter {
+  display:none;
+}
+
+#canvaswrap {
+  display:none;
+}

@@ -71,6 +71,10 @@
   </div>
 
   <div id="editorwrap">
+  
+  
+  
+<!--
     <div id="interface">
       <div id="main" class="editorblock">
         <div id="lineout" class="lineout">
@@ -102,8 +106,11 @@
         <pre id="editoraudio" class="editor"></pre>
       </div>
     </div>
+-->
     
     
+    
+
     <div id="menu">
       <div id="broadcastblock" class="menublock invisible">
         <div class="h3wrap">
@@ -113,7 +120,7 @@
           director name or group.
         </div>
       </div>
-      <div class="menublock">
+      <div id="modeselectblock" class="menublock">
         <div class="h3wrap">
           <h3
             title="classic: An ordinary shader editor.
@@ -219,9 +226,61 @@ geekest: geeker mode + 'void main(){}' can be omitted, 'gl_FragCoord' can be des
           <div id="githubdummy"></div>
         </div>
       </div>
-      
-      
+      <!--
+      <div id="authorblock" class="menublock">
+        <div class="h3wrap">
+          <h3>Author / GitHub</h3>
+        </div>
+        <div id="links" class="menublockinner">
+          <a href="https://twitter.com/h_doxas" target="_blank" id="twitter">doxas</a>
+          <div id="twitterdummy"></div>
+          <a href="https://github.com/doxas/twigl" target="_blank" id="github">twigl</a>
+          <div id="githubdummy"></div>
+        </div>
+      </div>
+      -->
     </div>
+    
+
+    <div id="interface">
+      <div id="main" class="editorblock">
+        <div id="lineout" class="lineout">
+          <div id="pausewrap">
+            <div id="pause">
+              <div id="pausecaption">render</div>
+              <label>
+                <input id="pausetoggle" class="toggle" type="checkbox" checked>
+                <div class="togglebutton"></div>
+              </label>
+            </div>
+          </div>
+          <div class="counter">
+            <div id="counter"></div>
+            <div class="counterchars">chars</div>
+          </div>
+          <div id="message" class="message"></div>
+        </div>
+        <pre id="editor" class="editor"></pre>
+      </div>
+      <div id="audio" class="editorblock invisible">
+        <div id="lineoutaudio" class="lineout">
+          <div class="counter">
+            <div id="counteraudio"></div>
+            <div class="counterchars">chars</div>
+          </div>
+          <div id="messageaudio" class="message"></div>
+        </div>
+        <pre id="editoraudio" class="editor"></pre>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    
   </div>
 </div>
 

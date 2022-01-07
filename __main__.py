@@ -1,6 +1,6 @@
 import sys
 import pathlib
-import ui
+import ui, editor
 
 sys.path.append(str(pathlib.Path.cwd()) + '/pythonista-webview')
 import wkwebview
@@ -18,6 +18,8 @@ class View(ui.View):
 
   def will_close(self):
     self.wv.clear_cache()
+
+
 '''
   def layout(self):
     self.wv.width = self.width
@@ -38,3 +40,4 @@ if __name__ == '__main__':
   view.present(style='fullscreen', orientations=['portrait'])
   #view.present(style='panel', orientations=['portrait'])
   view.wv.clear_cache()
+
