@@ -33,7 +33,7 @@ let fullIcon   = null; // fullscreen icon
 let broadIcon  = null; // broadcast mode icon
 let starIcon   = null; // star icon
 let menuIcon   = null; // menu icon
-let noteIcon   = null; // note icon
+//let noteIcon   = null; // note icon
 let hideIcon   = null; // hide menu icon
 let syncToggle = null; // スクロール同期用のチェックボックス
 
@@ -145,10 +145,10 @@ window.addEventListener('DOMContentLoaded', () => {
   iconColumn = document.querySelector('#globaliconcolumn');
   infoIcon   = document.querySelector('#informationicon');
   fullIcon   = document.querySelector('#fullscreenicon');
-  broadIcon  = document.querySelector('#broadcasticon');
+  //broadIcon  = document.querySelector('#broadcasticon');
   starIcon   = document.querySelector('#stariconwrap');
   menuIcon   = document.querySelector('#togglemenuicon');
-  noteIcon   = document.querySelector('#noteicon');
+  //noteIcon   = document.querySelector('#noteicon');
   hideIcon   = document.querySelector('#hidemenuicon');
   syncToggle = document.querySelector('#syncscrolltoggle');
 
@@ -171,6 +171,7 @@ window.addEventListener('DOMContentLoaded', () => {
   urlParameter = myURL.searchParams;
   //urlParameter = getParameter();
   urlParameter.forEach((value, key) => {
+    console.log(value, key);
     switch(key){
       case 'mode':
         currentMode = parseInt(value);
@@ -370,8 +371,18 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  
+  
   // audioToggle が checked である場合、URL からサウンドシェーダが有効化されている
+  
   if(audioToggle.checked === true){
+    // todo: ユーザーアクションをしていないと（タップとか）音は出ない
+    onomatSetting(true);
+    update(editor.getValue());
+    counter.textContent = `${editor.getValue().length}`;
+    audioCounter.textContent = `${audioEditor.getValue().length}`;
+    /*
+    console.log('ここか？');
     // まず自家製ダイアログを出しユーザーにクリック操作をさせる
     showDialog('This URL is a valid of sound shader.\nIt is OK play the audio?', {
       okLabel: 'yes',
@@ -386,7 +397,7 @@ window.addEventListener('DOMContentLoaded', () => {
           counter.textContent = `${editor.getValue().length}`;
           audioCounter.textContent = `${audioEditor.getValue().length}`;
         }
-      });
+      });*/
   }
 
   // ウィンドウのリサイズ時
@@ -773,7 +784,7 @@ window.addEventListener('DOMContentLoaded', () => {
     onomat.stop();
   }, false);
   
-  /*
+  
   window.addEventListener('keydown', (evt) => {
     // vim mode
     if(
@@ -830,6 +841,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }, false);
+  
   // デフォルトのメッセージを出力
   audioCounter.textContent = `${Onomat.FRAGMENT_SHADER_SOURCE_DEFAULT.length}`;
   audioMessage.textContent = ' ● ready';
@@ -994,11 +1006,14 @@ window.addEventListener('DOMContentLoaded', () => {
     toggleEditorView();
   }, false);
 
+  /*
   // import local sound
   noteIcon.addEventListener('click', () => {
     execMusician();
   }, false);
+  */
 
+  /*
   // broadcast
   broadIcon.addEventListener('click', () => {
     if(ownerURL !== ''){
@@ -1230,6 +1245,7 @@ window.addEventListener('DOMContentLoaded', () => {
         showDialog(err || 'Unknown Error', {cancelVisible: false});
       });
   }, false);
+  */
 
   // URL から取得した情報に応じて配信かどうか判断しセットアップする
   if(broadcastMode !== 'none'){
@@ -1428,7 +1444,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // メニュー及びエディタが非表示の場合（フルスクリーンとは異なる点に注意）
   if(isLayerHidden === true){toggleLayerView();}
-*/
+
 console.log('end');
 }, false);
 
@@ -2362,5 +2378,6 @@ function uuid(){
   return chars.join('');
 }
 
+console.log(document);
 })();
 

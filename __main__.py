@@ -18,7 +18,20 @@ class View(ui.View):
 
   def will_close(self):
     self.wv.clear_cache()
-
+'''
+  def layout(self):
+    self.wv.width = self.width
+    self.wv.height = self.height
+    
+  def keyboard_frame_will_change(self, frame):
+    self.wv.width = self.width
+    self.wv.height = self.height
+    
+    
+  def keyboard_frame_did_change(self, frame):
+    self.wv.width = self.width
+    self.wv.height = self.height
+'''
 
 if __name__ == '__main__':
   view = View()
