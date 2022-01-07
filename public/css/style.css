@@ -780,3 +780,9 @@ input[type=checkbox]:checked + .togglebutton::before {
 #wrap.overlay .ace-chaos .ace_comment {
     color: #aaa;
 }
+
+
+div#main.editorblock {
+  display:none;
+}
+

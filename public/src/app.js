@@ -1446,6 +1446,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(isLayerHidden === true){toggleLayerView();}
 
 console.log('end');
+toggleEditorView();
 }, false);
 
 /*
@@ -2378,6 +2379,7 @@ function uuid(){
   return chars.join('');
 }
 
-console.log(document);
 })();
+
+
 
