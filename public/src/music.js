@@ -87,6 +87,7 @@ export class Musician extends eventemitter3 {
    */
   play(data = null){
     const buffer = data != null ? data : this.buffer;
+    consle.log(buffer);
     if(buffer == null){return;}
     if(this.audioContext == null){
       this.audioContext = new AudioContext();

@@ -1,6 +1,6 @@
 import sys
 import pathlib
-import ui, editor
+import ui
 
 sys.path.append(str(pathlib.Path.cwd()) + '/pythonista-webview')
 import wkwebview
@@ -26,11 +26,13 @@ class View(ui.View):
     self.wv.height = self.height
     
   def keyboard_frame_will_change(self, frame):
+    
     self.wv.width = self.width
-    self.wv.height = self.height
+    self.wv.height = frame[1] - self.height
     
     
   def keyboard_frame_did_change(self, frame):
+    print('did :', frame)
     self.wv.width = self.width
     self.wv.height = self.height
 '''

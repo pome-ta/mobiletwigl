@@ -1,12 +1,7 @@
-
 import {Fragmen} from './fragmen.js';
 import {Onomat} from './onomat.js';
 import {Musician} from './music.js';
-//import {FireDB} from './firedb.js';
 
-//import * as firebase from 'firebase/app';
-//import 'firebase/database';
-//import 'firebase/analytics';
 
 (() => {
 
@@ -170,7 +165,6 @@ window.addEventListener('DOMContentLoaded', () => {
   urlParameter = myURL.searchParams;
   //urlParameter = getParameter();
   urlParameter.forEach((value, key) => {
-    console.log(value, key);
     switch(key){
       case 'mode':
         currentMode = parseInt(value);
@@ -2347,8 +2341,6 @@ function requestFullscreenMode(){
 */
 function copyToClipboard(str){
   // textarea を生成して値を設定し文字列選択でコマンド発行
-  console.log('copyToClipboard');
-  console.log(str);
   const t = document.createElement('textarea');
   t.value = str;
   document.body.appendChild(t);
