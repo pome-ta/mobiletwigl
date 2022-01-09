@@ -13,7 +13,8 @@ html, body {
     position: absolute;
 }
 body {
-    font-family: 'Barlow', sans-serif;
+    font-family: monospace;
+    /*font-family: 'Barlow', sans-serif;*/
     font-weight: 600;
 }
 #wrap {
@@ -795,10 +796,6 @@ div#main.editorblock {
 #globaliconwrap {
   display:none;
 }
-/*
-#globaliconcolumn {
-  display:none;
-}*/
 
 
 #broadcastblock {
@@ -818,6 +815,8 @@ div.counter {
   display:none;
 }
 
+/*
 #canvaswrap {
   display:none;
 }
+*/

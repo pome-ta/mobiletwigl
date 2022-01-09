@@ -87,6 +87,7 @@ const FRAGMEN_OPTION = {
   resize: true,
   escape: false
 }
+/*
 // 外部サービスへリクエストする際のベース URL
 const BASE_URL = location.origin;
 // firebase のコンフィグ
@@ -114,6 +115,7 @@ const BROADCAST_DIRECTION = {
   GRAPHICS: 'graphics',
   SOUND:    'sound',
 };
+*/
 
 window.addEventListener('DOMContentLoaded', () => {
   // firebase の初期化
@@ -226,6 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // channel ID がある場合は配信に関係している状態とみなす
   
   let invalidURL = false;
+  /*
   if(currentChannelId != null && directionMode != null){
     if(currentDirectorId != null){
       // ディレクター ID が存在する場合視聴者ではなくいずれかの配信者
@@ -300,7 +303,8 @@ window.addEventListener('DOMContentLoaded', () => {
       // 配信モードは視聴者
       broadcastMode = 'audience';
     }
-  }
+  }*/
+  
   if(invalidURL === true){
     // 無効な URL とみなされるなにかがあったので通常の初期化フローにする
     currentDirectorId = null;
@@ -375,7 +379,6 @@ window.addEventListener('DOMContentLoaded', () => {
     counter.textContent = `${editor.getValue().length}`;
     audioCounter.textContent = `${audioEditor.getValue().length}`;
     /*
-    console.log('ここか？');
     // まず自家製ダイアログを出しユーザーにクリック操作をさせる
     showDialog('This URL is a valid of sound shader.\nIt is OK play the audio?', {
       okLabel: 'yes',
@@ -436,6 +439,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, false);
 
+
+/*
   // ダウンロードボタン
   download.addEventListener('click', () => {
     // ボタンに disabled が付与されているかエンコード中は即時終了
@@ -653,7 +658,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 100);
       });
   }, false);
-
+*/
+/*
   // リンク生成ボタン
   link.addEventListener('click', () => {
     if(link.classList.contains('disabled') === true){return;}
@@ -673,7 +679,7 @@ window.addEventListener('DOMContentLoaded', () => {
         link.classList.remove('disabled');
       });
   }, false);
-
+*/
   // スクロール同期
   syncToggle.addEventListener('change', () => {
     syncScroll = syncToggle.checked;
@@ -769,7 +775,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }, false);
-  console.log('hoge');
   
   audioStopIcon.addEventListener('click', () => {
     if(musician != null){musician.stop();}
@@ -1439,6 +1444,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(isLayerHidden === true){toggleLayerView();}
 
 console.log('end');
+// todo: エディタを`canvas` の上にもってくる
 toggleEditorView();
 }, false);
 
@@ -1732,6 +1738,7 @@ function onomatSetting(play = true){
       }else{
         link.classList.add('disabled');
       }
+      /*
       // 配信中はステータスとは無関係に状態を送る
       if(currentChannelId != null && (broadcastMode === 'owner' || broadcastMode === 'friend')){
         // グラフィックスを編集する立場かどうか
@@ -1741,7 +1748,7 @@ function onomatSetting(play = true){
         ){
           updateSoundData(currentDirectorId, currentChannelId, soundPlay);
         }
-      }
+      }*/
     });
     // 再生まで行うよう引数で指定されている場合は再生処理をタイマーで登録
     if(play === true){
@@ -2339,6 +2346,7 @@ function requestFullscreenMode(){
 * 引数から受け取った文字列をクリップボードにコピーする
 * @param {string} str - コピーしたい文字列
 */
+/*
 function copyToClipboard(str){
   // textarea を生成して値を設定し文字列選択でコマンド発行
   const t = document.createElement('textarea');
@@ -2349,11 +2357,12 @@ function copyToClipboard(str){
   // body 配下から削除
   document.body.removeChild(t);
 }
-
+*/
 /**
 * uuid を生成する
 * @return {string}
 */
+/*
 function uuid(){
   // https://github.com/GoogleChrome/chrome-platform-analytics/blob/master/src/internal/identifier.js
   const chars = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.split('');
@@ -2369,7 +2378,7 @@ function uuid(){
   }
   return chars.join('');
 }
-
+*/
 })();
 
 
